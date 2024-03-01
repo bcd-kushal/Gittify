@@ -17,12 +17,9 @@ from utils import check_os
 from continuous_script import main as file_to_run  
 
 
-
-
-
 class GittyMonitor(win32serviceutil.ServiceFramework):
-    _svc_name_ = "Gitty Monitoring Service"
-    _svc_display_name_ = "Gitty Monitor"
+    _svc_name_ = "ZZZ Gitty Monitoring Service"
+    _svc_display_name_ = "ZZZ Gitty Monitor"
 
     def __init__(self, args):
         win32serviceutil.ServiceFramework.__init__(self, args)
@@ -62,11 +59,9 @@ class GittyMonitor(win32serviceutil.ServiceFramework):
         servicemanager.LogMsg(servicemanager.EVENTLOG_INFORMATION_TYPE,
                               servicemanager.PYS_SERVICE_STARTED,
                               (self._svc_name_, ''))
-        try:
-            file_to_run()
-        except Exception as err:
-            print("\n\nerr: ", err)
-            pass
+        
+        while not self.stop_requested:
+            print("JJK0")
 
 
 

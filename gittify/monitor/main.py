@@ -58,9 +58,9 @@ def main():
         # print(check_service.is_service_running("Gitty Monitor"))
 
         subprocess.run(RAW_ADMIN_INSTALL_COMMAND, shell=True, check=True) 
+        # subprocess.run(RAW_ADMIN_REMOVE_COMMAND, shell=True, check=True) 
         # print("Gitty Monitor:",check_service.is_service_running("Gitty Monitor"))       
         # print("Gitty Monitoring Service:",check_service.is_service_running("Gitty Monitoring Service"))       
-        # subprocess.run(RAW_ADMIN_REMOVE_COMMAND, shell=True, check=True) 
 
 
 
